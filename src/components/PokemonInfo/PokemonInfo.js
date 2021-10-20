@@ -1,7 +1,7 @@
 import { Component } from 'react';
-// import PokemonDataView from './PokemonDataView';
+import PokemonDataView from '../PokemonDataView';
 import PokemonErrorView from '../PokemonErrorView';
-// import PokemonPendingView from './PokemonPendingView';
+import PokemonPendingView from '../PokemonPendingView';
 // import pokemonAPI from '../services/pokemon-api';
 
 const Status = {
@@ -36,7 +36,7 @@ componentDidUpdate (prevProps, prevState) {
 
                 // this.setState ({loading: true, pokemon: null})
 
-                // setTimeout ( ()=> {  
+                setTimeout ( ()=> {  
 
                     fetch (`https://pokeapi.co/api/v2/pokemon/${nextName}`)
                     // .then(response=>response.json())
@@ -50,7 +50,7 @@ componentDidUpdate (prevProps, prevState) {
                     .finally (()=>this.setState({loading: false}))
                 
 
-                // }, 1500)
+                }, 1500)
                 
            
         }
@@ -65,7 +65,8 @@ componentDidUpdate (prevProps, prevState) {
         }
 
         if (status === 'pending') {
-            return <div> Загружаем... </div>
+            // return <div> Загружаем... </div>
+            return <PokemonPendingView />
         }
 
         if (status === 'rejected') {
@@ -74,15 +75,17 @@ componentDidUpdate (prevProps, prevState) {
         }
 
         if (status === 'resolved') {
-            return (
-                    <div>
-                     <p>{pokemon.name}</p>
-                        <img 
-                            src={pokemon.sprites.other['official-artwork'].front_default } 
-                            alt={pokemon.name}
-                            width="200" />
-                    </div>
-                    )
+            // return (
+            //         <div>
+            //          <p>{pokemon.name}</p>
+            //             <img 
+            //                 src={pokemon.sprites.other['official-artwork'].front_default } 
+            //                 alt={pokemon.name}
+            //                 width="200" />
+            //         </div>
+            //         )
+
+                    return (<PokemonDataView pokemon= {pokemon}/>)
         }
 
 
