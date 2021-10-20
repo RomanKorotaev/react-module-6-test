@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import { ImSearch } from 'react-icons/im';
-import { toast } from 'react-toastify';
+
+import { toast } from 'react-toastify';//// npm-пакет react для алертов, которые высвечиваются на протяжении указанного времени
+import 'react-toastify/dist/ReactToastify.css'; // Обязательно подключить файл стилей, иначе Toastify заглючит
+
 
 const styles = { form: { marginBottom: 20 } };
 
@@ -17,7 +20,9 @@ const styles = { form: { marginBottom: 20 } };
     event.preventDefault();
 
     if (this.state.pokemonName.trim() === '') {
-      toast.error('Введите имя покемона.');
+// alert ("Введите имя покемона!")
+     
+       toast.error("Введите имя покемона!");
       return;
     }
 

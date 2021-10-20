@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import { ToastContainer, toast } from 'react-toastify'; //// npm-пакет react для алертов, которые высвечиваются на протяжении указанного времени
+
+
 import { FaBeer } from 'react-icons/fa'; // npm-пакет для иконок react
 
 import PokemonForm from './components/PokemonForm/PokemonForm';
+// import PokemonInfo from './components/PokemonInfo/PokemonInfo';
 
 class App extends Component {
 
@@ -29,7 +32,12 @@ class App extends Component {
   }, 1000 );
 }
 
+//  notify = () => toast("Wow so easy!!!");
+
   render() {
+   
+    
+
     return (
 
       <div style = { { maxWidth: 1170, margin: '0 auto', padding: 20 } } >
@@ -37,9 +45,10 @@ class App extends Component {
             {this.state.pokemon && (<div> Тут будет покемон фетча и когда в стейт запишем </div>) }
             {this.state.pokemon && (<div> {this.state.pokemon.name} </div>) }
         <p>RENDER!</p>
-        <ToastContainer autoClose={3000}/>
-
+       
      <PokemonForm onSubmit = {this.handleFormSummit}/>   
+
+    <ToastContainer autoClose={4000}/>
 
       </div>
     )
