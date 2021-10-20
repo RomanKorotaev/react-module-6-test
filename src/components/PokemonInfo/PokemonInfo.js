@@ -36,7 +36,7 @@ componentDidUpdate (prevProps, prevState) {
 
                 // this.setState ({loading: true, pokemon: null})
 
-                setTimeout ( ()=> {  
+                // setTimeout ( ()=> {  
 
                     fetch (`https://pokeapi.co/api/v2/pokemon/${nextName}`)
                     // .then(response=>response.json())
@@ -50,13 +50,9 @@ componentDidUpdate (prevProps, prevState) {
                     .finally (()=>this.setState({loading: false}))
                 
 
-                }, 1500)
+                // }, 1500)
                 
-            // fetch (`https://pokeapi.co/api/v2/pokemon/${this.props.pokemonName}`)
-            // .then(res=>res.json())
-            // // .then(console.log)
-            // .then (pokemon => this.setState({pokemon}))
-            // .finally (()=>this.setState({loading: false}))
+           
         }
 }
 
