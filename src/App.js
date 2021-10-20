@@ -4,8 +4,10 @@ import { ToastContainer, toast } from 'react-toastify'; //// npm-пакет reac
 
 import { FaBeer } from 'react-icons/fa'; // npm-пакет для иконок react
 
+import PokemonInfo from './components/PokemonInfo/PokemonInfo';
 import PokemonForm from './components/PokemonForm/PokemonForm';
-// import PokemonInfo from './components/PokemonInfo/PokemonInfo';
+
+
 
 class App extends Component {
 
@@ -13,7 +15,7 @@ class App extends Component {
     pokemon: {},
     loading: false,
 
-    pokemonName: " "
+    pokemonName: ""
   }
 
   handleFormSummit = pokemonName => {
@@ -32,7 +34,6 @@ class App extends Component {
   }, 1000 );
 }
 
-//  notify = () => toast("Wow so easy!!!");
 
   render() {
    
@@ -46,7 +47,8 @@ class App extends Component {
             {this.state.pokemon && (<div> {this.state.pokemon.name} </div>) }
         <p>RENDER!</p>
        
-     <PokemonForm onSubmit = {this.handleFormSummit}/>   
+     <PokemonForm onSubmit = {this.handleFormSummit}/>
+     <PokemonInfo pokemonName = {this.state.pokemonName} />   
 
     <ToastContainer autoClose={4000}/>
 
