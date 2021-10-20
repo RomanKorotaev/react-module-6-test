@@ -1,6 +1,6 @@
 import { Component } from 'react';
 // import PokemonDataView from './PokemonDataView';
-// import PokemonErrorView from './PokemonErrorView';
+import PokemonErrorView from '../PokemonErrorView';
 // import PokemonPendingView from './PokemonPendingView';
 // import pokemonAPI from '../services/pokemon-api';
 
@@ -69,7 +69,8 @@ componentDidUpdate (prevProps, prevState) {
         }
 
         if (status === 'rejected') {
-            return <h1>Всё пропоало, покемона с именем  {pokemonName}  нет! {error.message} </h1> 
+            // return <h1>Всё пропоало, покемона с именем  {pokemonName}  нет! {error.message} </h1> 
+       return < PokemonErrorView message = {error.message}/>
         }
 
         if (status === 'resolved') {
